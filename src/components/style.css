@@ -1,0 +1,41 @@
+.navbar {    
+	display: inline-block;
+	position: center;
+	text-align: center;
+	width: 50px;
+	padding: 20px;
+	margin: 20px;
+	color: blue;
+	font-size: 15px;
+	font-family: "Lucida Console";
+  };
+.home {
+	background-color: hotpink;
+	font-family: "Lucida Console";
+	
+}
+
+label{
+	display: inline-block;
+	margin-right: 10px;
+	text-align: left;
+}
+input {
+	width: fit-content;
+	display: inline-block;
+	margin: 5px;
+}
+li {
+	font-family: "Lucida Console";
+	color: rgb(121, 57, 173)
+}
+h1 {
+	font-family: "Lucida Console";
+}
+h2 {
+	font-family: "Lucida Console";
+}
+.app {
+	background-color: rgb(179, 241, 184);
+}
+
