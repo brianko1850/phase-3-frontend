@@ -37,7 +37,7 @@ function Add() {
                 onChange={(e) => setTemperment(e.target.value)}
             ></textarea>
             <label htmlFor="leash puller?">Leash Puller?</label>
-            <input type="checkbox" onClick={(e)=>setDoesPull(e.target.value)}/>
+            <input type="checkbox" checked={this.state.doesPull} value={doesPull.checked} onChange ={(e)=>setDoesPull(e.target.checked)}/>
             <button type="submit">Add</button>
             <p>
              {name}
