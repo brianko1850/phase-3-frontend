@@ -3,7 +3,17 @@ import './style.css'
 
 function Edit() {
     return(
-        <h1>Edit</h1>
+       
+        <form onSubmit={(e)=>{
+            e.preventDefault()
+        }}>
+            <h1>Walks</h1>
+                
+            
+
+
+
+        </form>
     )
 }
 

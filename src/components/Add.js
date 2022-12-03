@@ -3,7 +3,7 @@ import './style.css'
 
 function Add() {
     return(
-        <h1>Add</h1>
+        <h1>New Dogo!</h1>
     )
 }
 
