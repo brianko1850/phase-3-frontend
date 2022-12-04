@@ -8,6 +8,13 @@ function Add(onAddDog) {
     const [ weight, setWeight ] = useState(0)
     const [ doesPull, setDoesPull ] = useState(false)
     const [ temperment, setTemperment ] = useState("")
+    const newDog = {
+        name: name,
+        weight: weight,
+        does_pull: doesPull,
+        temperment: temperment
+        
+    }
 
     
     function handleSubmit(e) {
@@ -18,12 +25,7 @@ function Add(onAddDog) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                name: name,
-                weight: weight,
-                temperment: temperment,
-                does_pull: doesPull
-            })
+            body: JSON.stringify({newDog})
         })
         .then((r)=>r.json())
         .then((dog) => {
@@ -37,9 +39,7 @@ function Add(onAddDog) {
 
   
     return(
-        <form onSubmit={(e)=>{
-            e.preventDefault()
-        }}>
+        <form onSubmit={handleSubmit}>
             <h1>Add a Doggo!</h1>
                 <label htmlFor="Name">Name:</label>
                 <input
