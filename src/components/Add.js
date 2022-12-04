@@ -2,12 +2,38 @@ import React from "react";
 import { useState } from "react";
 import './style.css'
 
-function Add() {
+function Add(onAddDog) {
 
     const [ name, setName] = useState("")
     const [ weight, setWeight ] = useState(0)
     const [ doesPull, setDoesPull ] = useState(false)
     const [ temperment, setTemperment ] = useState("")
+
+    
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        fetch("http://localhost:9292/dogs", {
+            method:"POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: name,
+                weight: weight,
+                temperment: temperment,
+                does_pull: doesPull
+            })
+        })
+        .then((r)=>r.json())
+        .then((dog) => {
+            onAddDog(dog);
+            setName("");
+            setWeight(0);
+            setDoesPull(false);
+            setTemperment("")
+        })
+    }
 
   
     return(
