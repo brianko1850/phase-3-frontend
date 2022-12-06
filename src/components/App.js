@@ -11,10 +11,8 @@ import Edit from "./Edit";
 function App() {
   
   const [ dogs, setDogs ] = useState([])
-  const [ walkers, setWalkers ] = useState([])
 
   
-
   function handleAddDogs(newDog) {
     setDogs([...dogs, newDog])
   }
@@ -26,7 +24,7 @@ function App() {
           <Routes>
               <Route path="/" element={ <Home />}/>
               <Route path="/dogs/new" element={ <Add onAddDog={handleAddDogs}/>}/>
-              <Route path="/dogs/:id" element={ <Edit/>}/>
+              <Route path="/dogs/:id" element={ <Edit dogs={dogs} onEdit={setDogs}/>}/>
           </Routes>
       </Router>
     </div>

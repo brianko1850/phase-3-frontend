@@ -9,10 +9,10 @@ function Home() {
         return (
             <div>
                 <ul>
-                    <li>{walk.walker_id}</li>
-                    <li>{walk.dog_id}</li>
-                    <li>{walk.duration}</li>
-                    <li>{walk.start_time}</li>
+                    <li>Walker: {walk.walker_id}</li>
+                    <li>Dog: {walk.dog_id}</li>
+                    <li>Duration: {walk.duration} minutes </li>
+                    <li>Start time: {walk.start_time}</li>
                 </ul>
             </div>
         )
