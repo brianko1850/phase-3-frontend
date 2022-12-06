@@ -9,15 +9,11 @@ import Edit from "./Edit";
 
 
 function App() {
-  const [ walks, setWalks ] = useState([])
+  
   const [ dogs, setDogs ] = useState([])
   const [ walkers, setWalkers ] = useState([])
 
-  useEffect(() => {
-    fetch("http://localhost:9292/walk")
-    .then((r)=>r.json())
-    .then((walks)=> setWalks(walks));
-  },[])
+  
 
   function handleAddDogs(newDog) {
     setDogs([...dogs, newDog])

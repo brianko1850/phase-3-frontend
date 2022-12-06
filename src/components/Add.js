@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import './style.css'
 
-function Add(onAddDog) {
+function Add({ onAddDog }) {
 
     const [ name, setName] = useState("")
     const [ weight, setWeight ] = useState(0)
@@ -20,14 +20,13 @@ function Add(onAddDog) {
     function handleSubmit(e) {
         e.preventDefault();
 
-        fetch("http://localhost:9292/dogs", {
+        fetch("http://localhost:9292/dogs/:id", {
             method:"POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({newDog})
+            body: JSON.stringify(newDog)
         })
-        .then((r)=>r.json())
         .then((dog) => {
             onAddDog(dog);
             setName("");
