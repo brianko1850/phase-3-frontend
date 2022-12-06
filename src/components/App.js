@@ -9,6 +9,12 @@ import Edit from "./Edit";
 
 
 function App() {
+
+  useEffect(()=> {
+    fetch("http://localhost:9292/dogs")
+    .then((r)=> r.json())
+    .then(dogs => setDogs(dogs))
+  },[])
   
   const [ dogs, setDogs ] = useState([])
 

@@ -16,17 +16,9 @@ function Edit({ dogs, onEdit }) {
     })
 
     return(
-       
-        <form onSubmit={(e)=>{
-            e.preventDefault()
-        }}>
-            <h1>dog</h1>
-                
-            
-
-
-
-        </form>
+       <>
+       {displayDogs}
+       </>
     )
 }
 
